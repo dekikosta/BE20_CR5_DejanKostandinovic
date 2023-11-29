@@ -28,7 +28,7 @@
             $emailError = "Email has the wrong format.";
         }
         else{
-            $sql = "SELECT * FROM `user` WHERE email = '$email'";
+            $sql = "SELECT * FROM `users` WHERE email = '$email'";
             $result = mysqli_query($conn, $sql);
             if(mysqli_num_rows($result) !== 0){
                 $error = true;
@@ -49,7 +49,7 @@
         if($error === false){
             $pass = hash("sha256", $pass);
 
-            $sql = "INSERT INTO `user`(`email`, `pass`, `picture`) VALUES ('$email', '$pass', '$picture[0]')";
+            $sql = "INSERT INTO `users`(`email`, `pass`, `picture`) VALUES ('$email', '$pass', '$picture[0]')";
             $result = mysqli_query($conn, $sql);
 
             if($result){
@@ -76,6 +76,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
 </head>
 <body>
     <?php require_once '../components/navbar.php' ?>

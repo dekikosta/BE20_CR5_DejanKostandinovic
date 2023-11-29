@@ -15,19 +15,19 @@
 
     require_once '../components/db_connect.php';
     require_once '../components/clean.php';
-    require_once '../components/fileUpload.php';
+    
 
     $emailError = "";
     $passError = "";
 
-    $sql = "SELECT * FROM `user` WHERE id = $id";
+    $sql = "SELECT * FROM `users` WHERE id = $id";
     $result = mysqli_query($conn, $sql);
     $row = mysqli_fetch_assoc($result);
 
     if(isset($_POST["update"])){
         $email = clean($_POST["email"]);
         $pass = clean($_POST["pass"]);
-        $picture = fileUpload($_FILES["picture"]);
+        $picture = $_POST["picture"];
 
         $error = false;
 
@@ -52,15 +52,11 @@
 
         if($error === false){
             $pass = hash("sha256", $pass);
-
-            if($_FILES["picture"]["error"] == 0){
-                if($row["picture"] !== "avatar.png"){
-                    unlink("../assets/$row[picture]");
-                }
-                $sql = "UPDATE `user` SET `email`='$email',`pass`='$pass', `picture`='$picture[0]' WHERE id = $id";
+                
+                $sql = "UPDATE `users` SET `email`='$email',`pass`='$pass', `picture`='$picture' WHERE id = $id";
             }
             else{
-                $sql = "UPDATE `user` SET `email`='$email',`pass`='$pass' WHERE id = $id";
+                $sql = "UPDATE `users` SET `email`='$email',`pass`='$pass' WHERE id = $id";
             }
 
             $result = mysqli_query($conn, $sql);
@@ -79,7 +75,7 @@
             }
         }
 
-    }
+    
 ?>
 
 <!DOCTYPE html>
@@ -89,6 +85,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link rel="stylesheet" href="/css/styles.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 </head>
 <body>
     <?php require_once '../components/navbar.php' ?>
@@ -106,8 +104,8 @@
                 <span><?= $passError; ?></span>
             </label>
             <label class="form-label">
-                Picture:
-                <input type="file" name="picture" class="form-control">
+                Picture Url:
+                <input type="text" name="picture" class="form-control">
             </label>
             <input type="submit" value="Update" name="update" class="btn btn-primary">
         </form>

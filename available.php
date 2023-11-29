@@ -2,7 +2,7 @@
 
 require_once "./components/db_connect.php";
 
-$sql = "SELECT * FROM `products` WHERE `age` >= 8";
+$sql = "SELECT * FROM `products` WHERE `status` = 'available'";
 $result = mysqli_query($conn, $sql);
 $cards = "";
 if(mysqli_num_rows($result) > 0){
@@ -56,18 +56,21 @@ mysqli_close($conn);
 
   
   <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
   <div class='myNavbar'>
     <div>
-      <a href='/index.php' class='logoTitle'>ADOPTION CENTER</a>
+      <h3 class='logoTitle'>Available Pets</h3>
     </div>
     <ul>
       <li><a href='/index.php'>All Pets</a></li>
-      <li><a href='/available.php'>Pets Available</a></li>
+      <li><a href='/senior.php'>Senior</a></li>
     </ul>
   </div>
 

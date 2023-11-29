@@ -1,0 +1,151 @@
+
+.logo {
+    max-width: 200px; 
+    height: auto;
+  }
+.footer{
+  background: #000;
+}
+.footer p{
+  color: aliceblue;
+  font-weight: bold;
+
+}
+.card{
+  background: #898888;
+}
+.card-body{
+  background: #d3c8c8;
+  
+}
+.card-body h5{
+  padding: 20px;
+  margin: 1px;
+  background: #d26a6a;
+  color: rgb(253, 255, 255);
+  font-weight: bold;
+
+}
+.card-body p{
+  font-family: 'Lobster', sans-serif;
+}
+.heroLinks{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 5rem;
+  margin-top: 5rem;
+  
+}
+.heroBtns1 {
+  font-family: 'Lobster', sans-serif;
+  display: inline-block;
+    padding: 15px 30px;
+    margin-right: 60px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; 
+    background-color: #3498db; 
+    border: 2px solid #88b8d7; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+.heroBtns1:hover {
+  background-color: #2980b9; 
+  color: #ffffff; 
+}
+.heroBtns2 {
+  font-family: 'Lobster', sans-serif;
+  display: inline-block;
+    padding: 15px 30px;
+    text-align: center;
+    text-decoration: none;
+    font-size: 16px;
+    font-weight: bold;
+    color: #ffffff; 
+    background-color: #3498db; 
+    border: 2px solid #85b4d4; 
+    border-radius: 5px; 
+    transition: background-color 0.3s ease, color 0.3s ease; 
+}
+.heroBtns2:hover {
+  background-color: #2980b9; 
+  color: #ffffff; 
+}
+.myNavbar {
+  padding: 50px; 
+  text-align: center; 
+  text-decoration: none;
+}
+.logoTitle {
+  background-color: rgb(46, 208, 75);
+  color: #ffffff;
+  border-radius: 5px; 
+  padding: 15px 20px;
+  font-family: 'Lobster', sans-serif;
+  display: inline-block;
+  text-align: center;
+  margin-left: 28px;
+  text-decoration: none;
+  
+}
+ul {
+  list-style-type: none;
+  padding: 4px;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+li {
+  margin: 0 10px; /
+}
+
+li a {
+  font-family: 'Lobster', sans-serif;
+  display: inline-block;
+  padding: 10px 20px;
+  text-decoration: none;
+  color: #ffffff; 
+  background-color: #2980b9; 
+  border: 2px solid #2980b9; 
+  border-radius: 5px; 
+  transition: background-color 0.3s ease, color 0.3s ease; 
+}
+
+li a:hover {
+  background-color: #3498db; 
+  color: #ffffff; 
+}
+.input {
+  background-color: #28a745;
+  color: #fff;
+  padding: 10px 20px;
+  font-size: 16px;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+}
+.profile-picture {
+  width: 100px; 
+  height: 40px;
+  border-radius: 50%; 
+  border: 2px solid rgb(202, 209, 222); 
+  
+}
+
+
+.nav-item p {
+  margin-top: 15px; 
+  margin-bottom: 0; 
+  color: #fff; 
+  font-weight: bold; 
+}
+
+
+.nav-item {
+  padding-left: 10px;
+  padding-right: 10px;
+  
+}
